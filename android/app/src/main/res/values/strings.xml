@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Diagnóstico do Café</string>
+    <string name="title_activity_main">Diagnóstico do Café</string>
+    <string name="package_name">com.tcc.diagnosticocafe</string>
+    <string name="custom_url_scheme">com.tcc.diagnosticocafe</string>
+</resources>

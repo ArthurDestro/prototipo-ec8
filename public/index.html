@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2e7d32">
+  <title>Diagnóstico do Café</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+
+    <!-- Login -->
+    <section id="tela-login" class="tela">
+      <div class="marca">
+        <span class="logo">☕</span>
+        <h1>Diagnóstico do Café</h1>
+        <p>Identifique doenças e pragas nas suas plantas</p>
+      </div>
+      <form id="form-login">
+        <label>E-mail
+          <input type="email" name="email" autocomplete="username" required>
+        </label>
+        <label>Senha
+          <input type="password" name="senha" autocomplete="current-password" required>
+        </label>
+        <p class="erro" id="erro-login"></p>
+        <button type="submit" class="botao">Entrar</button>
+      </form>
+      <button type="button" class="link" data-ir="cadastro">Não tem conta? Cadastre-se</button>
+      <p class="dica">Teste: teste@cafe.com / 123456</p>
+    </section>
+
+    <!-- Cadastro -->
+    <section id="tela-cadastro" class="tela" hidden>
+      <div class="marca">
+        <span class="logo">☕</span>
+        <h1>Criar conta</h1>
+      </div>
+      <form id="form-cadastro">
+        <label>Nome
+          <input type="text" name="nome" autocomplete="name" required>
+        </label>
+        <label>E-mail
+          <input type="email" name="email" autocomplete="username" required>
+        </label>
+        <label>Senha
+          <input type="password" name="senha" autocomplete="new-password" required>
+        </label>
+        <p class="erro" id="erro-cadastro"></p>
+        <button type="submit" class="botao">Cadastrar</button>
+      </form>
+      <button type="button" class="link" data-ir="login">Já tenho conta</button>
+    </section>
+
+    <!-- Menu -->
+    <section id="tela-menu" class="tela" hidden>
+      <h2 id="saudacao"></h2>
+      <p class="texto">O que você quer fazer?</p>
+      <nav class="menu">
+        <button type="button" class="opcao" data-ir="historico"><span>🕘</span>Histórico</button>
+        <button type="button" class="opcao" data-ir="upload"><span>📷</span>Upload de foto</button>
+        <button type="button" class="opcao" data-ir="modelo"><span>🌱</span>Modelo</button>
+      </nav>
+      <button type="button" class="link" id="sair">Sair</button>
+    </section>
+
+    <!-- Histórico -->
+    <section id="tela-historico" class="tela" hidden>
+      <button type="button" class="voltar" data-ir="menu">← Voltar</button>
+      <h2>Histórico</h2>
+      <p class="texto" id="historico-vazio">Nenhuma foto enviada ainda.</p>
+      <ul class="lista" id="lista-historico"></ul>
+    </section>
+
+    <!-- Upload de foto -->
+    <section id="tela-upload" class="tela" hidden>
+      <button type="button" class="voltar" data-ir="menu">← Voltar</button>
+      <h2>Upload de foto</h2>
+      <p class="texto">Escolha ou tire uma foto da folha do café.</p>
+      <label class="escolher-foto">
+        <input type="file" id="foto" accept="image/*">
+        <img id="previa" alt="Prévia da foto escolhida" hidden>
+        <span id="escolher-texto">Toque para escolher uma foto</span>
+      </label>
+      <button type="button" class="botao" id="enviar-foto" disabled>Enviar para análise</button>
+      <p class="sucesso" id="foto-enviada" hidden>Foto enviada! Acompanhe no Histórico.</p>
+    </section>
+
+    <!-- Modelo -->
+    <section id="tela-modelo" class="tela" hidden>
+      <button type="button" class="voltar" data-ir="menu">← Voltar</button>
+      <h2>Modelo</h2>
+      <div class="cartao">
+        <h3>Detecção de doenças e pragas do café</h3>
+        <p>Modelo que vai avaliar as fotos enviadas pelo agricultor.</p>
+        <span class="selo">Em desenvolvimento</span>
+      </div>
+    </section>
+
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
